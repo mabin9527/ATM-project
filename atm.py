@@ -26,6 +26,14 @@ class ATM:
             print('Please enter the right phone number')
             return False
 
+        print()
+        print('--------Please enter your full name--------')
+        username = input('Pleaase enter your full name: ')
+        regex = re.match('^[a-zA-Z]+ [a-zA-Z]+$', username)
+        if not regex:
+            print('Please enter your name correctly')
+            return False
+
 
 atm = ATM()
 atm.create_account()
