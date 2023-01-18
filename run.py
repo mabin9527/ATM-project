@@ -12,5 +12,4 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('ATM_project')
 
-data = SHEET.worksheet('client_info').get_values()
-print(data)
+
