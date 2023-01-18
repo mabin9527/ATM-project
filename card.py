@@ -12,4 +12,3 @@ class Card:
         self.password = password
         self.balance = balance
         self.card_lock = False
-        
