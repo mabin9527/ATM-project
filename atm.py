@@ -44,7 +44,13 @@ class ATM:
         confirm = input('Please confirm your password: ')
         if password != confirm:
             print('The confirmation password is not identical!')
-            
+            for i in range(2, 0, -1):
+                confirm = input(f'Incorrect! {i} times left')
+                if password == confirm:
+                    break
+            else:
+                print('Incorrect! Retruning to previous menu')
+                return False
 
 
 atm = ATM()
