@@ -23,6 +23,4 @@ class Admin:
         print('--------------------------------------------')
 
 
-admin = Admin()
-admin.welcome()
-admin.func()
+
