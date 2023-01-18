@@ -1,4 +1,4 @@
-import re
+import re, random
 
 
 class ATM:
@@ -59,6 +59,9 @@ class ATM:
         if not regex:
             print('Please enter correct amount of predeposit')
             return False
+
+        account_number = random.randrange(10000000, 1000000000)
+        print(f'Congralations! Your account number is {account_number}')
 
 
 atm = ATM()
