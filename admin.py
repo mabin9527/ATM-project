@@ -21,4 +21,8 @@ class Admin:
         print('------(3)   Withdraw  ---(4)  Balance ------')
         print('--------------------------------------------')
         print('--------------------------------------------')
-        
+
+
+admin = Admin()
+admin.welcome()
+admin.func()
