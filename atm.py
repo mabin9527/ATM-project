@@ -45,12 +45,20 @@ class ATM:
         if password != confirm:
             print('The confirmation password is not identical!')
             for i in range(2, 0, -1):
-                confirm = input(f'Incorrect! {i} times left')
+                confirm = input(f'Incorrect! {i} times left: ')
                 if password == confirm:
                     break
             else:
                 print('Incorrect! Retruning to previous menu')
                 return False
+        
+        print()
+        print('--------Please enter your predeposit--------')
+        balance = input('Please enter your amount: ')
+        regex = re.match('[1-9][0-9]+$', balance)
+        if not regex:
+            print('Please enter correct amount of predeposit')
+            return False
 
 
 atm = ATM()
