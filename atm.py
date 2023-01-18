@@ -34,6 +34,18 @@ class ATM:
             print('Please enter your name correctly')
             return False
 
+        print()
+        print('--------Please enter your password--------')
+        password = input('Please enter your password(4 digits): ')
+        regex = re.match('\d{4}', password)
+        if not regex:
+            print('Incorrect! your password should contains 4 digits')
+            return False
+        confirm = input('Please confirm your password: ')
+        if password != confirm:
+            print('The confirmation password is not identical!')
+            
+
 
 atm = ATM()
 atm.create_account()
