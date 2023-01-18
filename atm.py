@@ -16,6 +16,15 @@ class ATM:
         if not regex:
             print('Please enter the right passport number')
             return False
+        
+        print()
+        print('--------Please enter your phone number--------')
+        print('-------Phone number should start with 08------')
+        phone_number = input('Please enter your phone number: ')
+        regex = re.match('08[35679][0-9]{7}$', phone_number)
+        if not regex:
+            print('Please enter the right phone number')
+            return False
 
 
 atm = ATM()
