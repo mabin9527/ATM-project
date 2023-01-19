@@ -1,4 +1,8 @@
-import re, random
+import re
+import random
+import csv
+from card import Card
+from user import User
 
 
 class ATM:
@@ -62,6 +66,23 @@ class ATM:
 
         account_number = random.randrange(10000000, 1000000000)
         print(f'Congralations! Your account number is {account_number}')
+        
+        card = Card(account_number, password, balance)
+        user = User(passport_number, username, phone_number, card)
+        header = [
+            'passport_number', 'username', 'phone_number',
+            'account_number', 'password', 'balance', 'card_lock'
+        ]
+        rows = []
+        rows.append((
+            user.passport_number, user.username, user.phone_number,
+            user.card.account_number, user.card.password, user.card.balance,
+            user.card.card_lock
+            ))
+        with open('data.csv', 'w') as f:
+            data_csv = csv.writer(f)
+            data_csv.writerrow(header)
+            data_csv.writerows(rows)
 
 
 atm = ATM()
