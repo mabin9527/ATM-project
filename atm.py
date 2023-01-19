@@ -79,11 +79,9 @@ class ATM:
             user.card.account_number, user.card.password, user.card.balance,
             user.card.card_lock
             ))
-        with open('data.csv', 'w') as f:
+        with open('data.csv', 'w', encoding='UTF-8') as f:
             data_csv = csv.writer(f)
-            data_csv.writerrow(header)
+            data_csv.writerow(header)
             data_csv.writerows(rows)
 
 
-atm = ATM()
-atm.create_account()
