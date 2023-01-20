@@ -1,13 +1,26 @@
 import re
 import random
-import csv
-from card import Card
+import gspread
+from google.oauth2.service_account import Credentials
 from user import User
+from card import Card
+
+SCOPE = [
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive"
+    ]
+
+CREDS = Credentials.from_service_account_file('creds.json')
+SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+SHEET = GSPREAD_CLIENT.open('ATM_project')
 
 
 class ATM:
     """
     Collect user's personal information and generate an account number
+    Inser all information to google spreadsheet
     """
 
     def create_account(self):
@@ -66,22 +79,18 @@ class ATM:
 
         account_number = random.randrange(10000000, 1000000000)
         print(f'Congralations! Your account number is {account_number}')
-        
+
         card = Card(account_number, password, balance)
         user = User(passport_number, username, phone_number, card)
-        header = [
-            'passport_number', 'username', 'phone_number',
-            'account_number', 'password', 'balance', 'card_lock'
-        ]
-        rows = []
-        rows.append((
+        data = [
             user.passport_number, user.username, user.phone_number,
-            user.card.account_number, user.card.password, user.card.balance,
-            user.card.card_lock
-            ))
-        with open('data.csv', 'w', encoding='UTF-8') as f:
-            data_csv = csv.writer(f)
-            data_csv.writerow(header)
-            data_csv.writerows(rows)
+            user.card.account_number, user.card.password,
+            user.card.balance, user.card.card_lock
+            ]
+        spreadsheets = SHEET.worksheet('client_info')
+        spreadsheets.append_row(data)
 
+        
+atm = ATM()
+atm.create_account()
 
