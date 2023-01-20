@@ -22,7 +22,7 @@ class ATM:
     Collect user's personal information and generate an account number
     Inser all information to google spreadsheet
     """
-
+        
     def create_account(self):
 
         print('--------Please enter your passport number--------')
@@ -77,7 +77,12 @@ class ATM:
             print('Please enter correct amount of predeposit')
             return False
 
-        account_number = random.randrange(10000000, 1000000000)
+        spreadsheets = SHEET.worksheet('client_info')
+        while True:
+            account_number = random.randrange(10000000, 1000000000)
+            acc_number = spreadsheets.col_values(4)
+            if account_number != acc_number:
+                break
         print(f'Congralations! Your account number is {account_number}')
 
         card = Card(account_number, password, balance)
@@ -87,10 +92,8 @@ class ATM:
             user.card.account_number, user.card.password,
             user.card.balance, user.card.card_lock
             ]
-        spreadsheets = SHEET.worksheet('client_info')
         spreadsheets.append_row(data)
 
-        
-atm = ATM()
-atm.create_account()
+
+
 
