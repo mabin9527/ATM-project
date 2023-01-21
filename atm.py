@@ -98,12 +98,16 @@ class ATM:
         Account number, password, card lock have to be checked 
         before lodgement
         """
-        pass
-
-    def __public_checkAccountNumber(self):
+        check_user = self.__public_check_account_number()
+        if not check_user:
+            return False
+        if not self.__public_verify_password(check_user):
+            return False
         
+    def __public_check_account_number(self):
+
         """
-        Check if input account number from users matches 
+        Check if input account number from users matches
         saved account number.
         """
         try:
@@ -113,7 +117,24 @@ class ATM:
             saved_account_number = [int(x) for x in saved_account_number]
             if account_number in saved_account_number:
                 print('Your account number is correct!')
-            else:
-                print("Your account number doesn't exist!")
+                return True
         except ValueError:
             print('Please enter numbers for your account number!')
+        print("Your account number doesn't exist!")
+        return False
+
+    def __public_verify_password(self, check_user):
+        """
+        Verity password entered by user and password saved in database
+        """
+        account_password = check_user.card.password
+        password = input('Please enter your password: ')
+        if account_password != password:
+            for i in range(2, 0, -1):
+                password = input(f'Incorrect! {i} times left: ')
+                if password == account_password:
+                    break
+            else: 
+                print('Your card has been blocked! Please contact us')
+                return False
+            return True

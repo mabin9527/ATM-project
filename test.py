@@ -13,18 +13,41 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('ATM_project')
 
 spreadsheets = SHEET.worksheet('client_info')
-try:
-    account_number = int(input('Please enter your account number: '))
-    saved_account_number = spreadsheets.col_values(4)
-    saved_account_number.pop(0)
-    saved_account_number = [int(x) for x in saved_account_number]
-    if account_number in saved_account_number:
-        print('Your account number is correct!')
-    else:
-        print("Your account number doesn't exist!")
-except ValueError:
-    print('Please enter numbers for your account number!')
 
-    
+
+class Lodgement:
+    """
+    pass
+    """
+    def lodgement(self):
+        """
+        Account number, password, card lock have to be checked 
+        before lodgement
+        """
+        if not self.__public_check_account_number():
+            return False
+
+    def __public_check_account_number(self):
+
+        """
+        Check if input account number from users matches 
+        saved account number.
+        """
+        try:
+            account_number = int(input('Please enter your account number: '))
+            saved_account_number = spreadsheets.col_values(4)
+            saved_account_number.pop(0)
+            saved_account_number = [int(x) for x in saved_account_number]
+            if account_number in saved_account_number:
+                print('Your account number is correct!')
+                return True
+        except ValueError:
+            print('Please enter numbers for your account number!')
+        print("Your account number doesn't exist!")
+        return False
+
+
+a = Lodgement()
+a.lodgement()   
 
 
