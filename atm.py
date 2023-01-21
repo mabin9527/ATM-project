@@ -98,12 +98,9 @@ class ATM:
         Account number, password, card lock have to be checked 
         before lodgement
         """
-        check_user = self.__public_check_account_number()
-        if not check_user:
+        if not self.__public_check_account_number():
             return False
-        if not self.__public_verify_password(check_user):
-            return False
-        
+            
     def __public_check_account_number(self):
 
         """
@@ -123,11 +120,15 @@ class ATM:
         print("Your account number doesn't exist!")
         return False
 
-    def __public_verify_password(self, check_user):
+    def __public_verify_password(self, account_number):
         """
         Verity password entered by user and password saved in database
         """
-        account_password = check_user.card.password
+        account_number_row = spreadsheets.find(account_number).row
+        account_number_col = spreadsheets.find(account_number).col
+        account_password = spreadsheets.cell(
+            account_number_row, account_number_col+1
+            ).value
         password = input('Please enter your password: ')
         if account_password != password:
             for i in range(2, 0, -1):
