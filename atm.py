@@ -112,7 +112,7 @@ class ATM:
         if card_lock == 'TRUE':
             print('Your card has been blocked!')
             return
-        if self.__public_verify_password(account_number):
+        if not self.__public_verify_password(account_number):
             return
         deposit = int(input('Please enter your deposit: '))
         if deposit % 5 != 0:
@@ -142,7 +142,7 @@ class ATM:
         if card_lock == 'TRUE':
             print('Your card has been blocked!')
             return
-        if self.__public_verify_password(account_number):
+        if not self.__public_verify_password(account_number):
             return
         money = int(input('Please enter the amount you want to withdraw: '))
         if money % 5 != 0:
@@ -153,6 +153,28 @@ class ATM:
             print('Your withdrawal is successfully!')
             spreadsheets.update_cell(
                 account_number_row, account_number_col+2, int(balance)-money)
+
+    def check_balance(self):
+        """
+        Allow user to check their account balance
+        """
+        account_number = self.__public_check_account_number()
+        if not account_number:
+            return
+        account_number_row = spreadsheets.find(account_number).row
+        account_number_col = spreadsheets.find(account_number).col
+        card_lock = spreadsheets.cell(
+            account_number_row, account_number_col+3
+            ).value
+        if card_lock == 'TRUE':
+            print('Your card has been blocked!')
+            return
+        if not self.__public_verify_password(account_number):
+            return
+        balance = spreadsheets.cell(
+            account_number_row, account_number_col+2
+        ).value
+        print(f'Your balance is {int(balance)}')
 
     def __public_check_account_number(self):
 
@@ -187,7 +209,6 @@ class ATM:
             for i in range(2, 0, -1):
                 password = input(f'Incorrect! {i} times left: ')
                 if password == account_password:
-                    print('Your password is correct!')
                     break
             else:
                 print('Your account has been blocked! Please contact us')
@@ -195,6 +216,5 @@ class ATM:
                     account_number_row, account_number_col+3, True
                     )
                 return False
-        else:
-            print('Your password is correct!')
-            return True
+        print('Your password is correct!')
+        return True

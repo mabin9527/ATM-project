@@ -31,7 +31,9 @@ def main():
             atm.lodgement()
         elif menu == '3':
             atm.withdraw()
-
+        elif menu == '4':
+            atm.check_balance()
+            
 
 if __name__ == '__main__':
     main()
