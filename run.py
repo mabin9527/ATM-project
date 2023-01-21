@@ -27,3 +27,7 @@ def main():
         atm = ATM()
         if menu == '1':
             atm.create_account()
+
+
+# if __name__ == '__main__':
+#     main()

@@ -16,14 +16,18 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('ATM_project')
 
+spreadsheets = SHEET.worksheet('client_info')
+
 
 class ATM:
     """
-    Collect user's personal information and generate an account number
-    Inser all information to google spreadsheet
+    pass
     """
-        
     def create_account(self):
+        """
+        Collect user's personal information and generate an account number
+        Inser all information to google spreadsheet
+        """
 
         print('--------Please enter your passport number--------')
         print('Passport number should like the following example')
@@ -33,7 +37,6 @@ class ATM:
         if not regex:
             print('Please enter the right passport number')
             return False
-        
         print()
         print('--------Please enter your phone number--------')
         print('-------Phone number should start with 08------')
@@ -42,7 +45,6 @@ class ATM:
         if not regex:
             print('Please enter the right phone number')
             return False
-
         print()
         print('--------Please enter your full name--------')
         username = input('Pleaase enter your full name: ')
@@ -50,7 +52,6 @@ class ATM:
         if not regex:
             print('Please enter your name correctly')
             return False
-
         print()
         print('--------Please enter your password--------')
         password = input('Please enter your password(4 digits): ')
@@ -68,7 +69,6 @@ class ATM:
             else:
                 print('Incorrect! Retruning to previous menu')
                 return False
-        
         print()
         print('--------Please enter your predeposit--------')
         balance = input('Please enter your amount: ')
@@ -77,9 +77,8 @@ class ATM:
             print('Please enter correct amount of predeposit')
             return False
 
-        spreadsheets = SHEET.worksheet('client_info')
         while True:
-            account_number = random.randrange(10000000, 1000000000)
+            account_number = random.randrange(10000000, 100000000)
             acc_number = spreadsheets.col_values(4)
             if account_number != acc_number:
                 break
@@ -94,6 +93,27 @@ class ATM:
             ]
         spreadsheets.append_row(data)
 
+    def lodgement(self):
+        """
+        Account number, password, card lock have to be checked 
+        before lodgement
+        """
+        pass
 
-
-
+    def __public_checkAccountNumber(self):
+        
+        """
+        Check if input account number from users matches 
+        saved account number.
+        """
+        try:
+            account_number = int(input('Please enter your account number: '))
+            saved_account_number = spreadsheets.col_values(4)
+            saved_account_number.pop(0)
+            saved_account_number = [int(x) for x in saved_account_number]
+            if account_number in saved_account_number:
+                print('Your account number is correct!')
+            else:
+                print("Your account number doesn't exist!")
+        except ValueError:
+            print('Please enter numbers for your account number!')
