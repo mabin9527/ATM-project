@@ -98,7 +98,10 @@ class ATM:
         Account number, password, card lock have to be checked 
         before lodgement
         """
-        if not self.__public_check_account_number():
+        account_number = self.__public_check_account_number()
+        if not account_number:
+            return False
+        if not self.__public_verify_password(account_number):
             return False
             
     def __public_check_account_number(self):
@@ -114,7 +117,7 @@ class ATM:
             saved_account_number = [int(x) for x in saved_account_number]
             if account_number in saved_account_number:
                 print('Your account number is correct!')
-                return True
+                return str(account_number)
         except ValueError:
             print('Please enter numbers for your account number!')
         print("Your account number doesn't exist!")
