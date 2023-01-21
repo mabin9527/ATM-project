@@ -39,10 +39,19 @@ class ATM:
         before lodgement
         """
         account_number = self.__public_check_account_number()
+        account_number_row = spreadsheets.find(account_number).row
+        account_number_col = spreadsheets.find(account_number).col
+        card_lock = spreadsheets.cell(
+            account_number_row, account_number_col+3
+            ).value
+        print(card_lock)
         if not account_number:
-            return False
+            return 
+        if card_lock == 'TRUE':
+            print('Your card has been blocked')
+            return
         if not self.__public_verify_password(account_number):
-            return False
+            return 
 
     def __public_check_account_number(self):
 
@@ -80,6 +89,7 @@ class ATM:
             for i in range(2, 0, -1):
                 password = input(f'Incorrect! {i} times left: ')
                 if password == account_password:
+                    print('Your password is correct!')
                     break
             else: 
                 print('Your card has been blocked! Please contact us')
