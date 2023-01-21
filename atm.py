@@ -138,10 +138,12 @@ class ATM:
                 password = input(f'Incorrect! {i} times left: ')
                 if password == account_password:
                     break
-                else: 
-                    print('Your card has been blocked! Please contact us')
-                    spreadsheets.update_cell(
-                        account_number_row, account_number_col, True
-                        )
-                    return False
-        return True
+            else:
+                print('Your account has been blocked! Please contact us')
+                spreadsheets.update_cell(
+                    account_number_row, account_number_col+3, True
+                    )
+                return False
+        else:
+            print('Your password is correct!')
+            return True
