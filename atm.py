@@ -99,6 +99,8 @@ class ATM:
         before lodgement
         """
         account_number = self.__public_check_account_number()
+        if not account_number:
+            return
         account_number_row = spreadsheets.find(account_number).row
         account_number_col = spreadsheets.find(account_number).col
         card_lock = spreadsheets.cell(
@@ -107,12 +109,10 @@ class ATM:
         balance = spreadsheets.cell(
             account_number_row, account_number_col+2
         ).value
-        if not account_number:
-            return
         if card_lock == 'TRUE':
             print('Your card has been blocked!')
             return
-        if not self.__public_verify_password(account_number):
+        if self.__public_verify_password(account_number):
             return
         deposit = int(input('Please enter your deposit: '))
         if deposit % 5 != 0:
@@ -123,8 +123,37 @@ class ATM:
                 account_number_row, account_number_col+2,
                 deposit + int(balance)
                 )
+
+    def withdraw(self):
+        """
+        User can withdraw money by calling this function
+        """
+        account_number = self.__public_check_account_number()
+        if not account_number:
             return
-            
+        account_number_row = spreadsheets.find(account_number).row
+        account_number_col = spreadsheets.find(account_number).col
+        card_lock = spreadsheets.cell(
+            account_number_row, account_number_col+3
+            ).value
+        balance = spreadsheets.cell(
+            account_number_row, account_number_col+2
+        ).value
+        if card_lock == 'TRUE':
+            print('Your card has been blocked!')
+            return
+        if self.__public_verify_password(account_number):
+            return
+        money = int(input('Please enter the amount you want to withdraw: '))
+        if money % 5 != 0:
+            print('Please enter the correct amount!')
+        elif money > int(balance):
+            print('Your balance is insufficient!')
+        else:
+            print('Your withdrawal is successfully!')
+            spreadsheets.update_cell(
+                account_number_row, account_number_col+2, int(balance)-money)
+
     def __public_check_account_number(self):
 
         """

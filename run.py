@@ -29,6 +29,8 @@ def main():
             atm.create_account()
         elif menu == '2':
             atm.lodgement()
+        elif menu == '3':
+            atm.withdraw()
 
 
 if __name__ == '__main__':

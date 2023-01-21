@@ -22,21 +22,20 @@ spreadsheets = SHEET.worksheet('client_info')
 #     print(account_number)
 # card = Card('92678223', '1234', '100')
 # user = User('G1234567', 'Jay Chou', '0879798188', card)
-a = input(':')
-account_number_col = spreadsheets.find(a).col
-account_number_row = spreadsheets.find(a).row
+# a = input(':')
+# account_number_col = spreadsheets.find(a).col
+# account_number_row = spreadsheets.find(a).row
 # b = spreadsheets.cell(account_number_row, account_number_col+1).value
 # print(b)
-balance = spreadsheets.cell(
-    account_number_row, account_number_col+2
-).value
-deposit = int(input(': '))
-if deposit % 5 != 0:
-    print('Please enter correct number')
-else:
-    balance = deposit + int(balance)
-    update_cell(balance)
-
+# balance = spreadsheets.cell(
+#     account_number_row, account_number_col+2
+# ).value
+# deposit = int(input(': '))
+# if deposit % 5 != 0:
+#     print('Please enter correct number')
+# else:
+#     balance = deposit + int(balance)
+#     spreadsheets.update_cell(row, col, value)
 # class ATM:
 #     """
 #     pass
@@ -112,3 +111,6 @@ else:
 
 # a = ATM()
 # a.lodgement()
+
+
+         
