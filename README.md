@@ -136,6 +136,15 @@ When the user wants to withdraw the money in their bank account, option 3 is sel
 ![Insufficient balance](readme-assets/insufficient-balance.png)
 
 
+----------------------------------------
+#### Balance
+
+When the user wants to check the balance of their account, option 4 is selected. The user has to verify their account number and password. All the procedures are the same as the lodgement. Then the balance will be shown on the screen.
+
+![Balance](readme-assets/balance.png)
+
+
+
 
 
 
