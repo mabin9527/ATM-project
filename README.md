@@ -99,6 +99,7 @@ When the user wants to open a bank account, option 1 is selected. The following 
 
 ![Generate account number](readme-assets/generate-random-account-number.png)
 
+
 ----------------------------------------
 #### Lodgement
 
@@ -123,6 +124,18 @@ When the user wants to lodge the money in their bank account, option 2 is select
 - Lodgement will be successful when the account number and password are matched.
 
 ![Lodgement](readme-assets/lodgement-successful.png)
+
+
+----------------------------------------
+#### Withdraw
+
+When the user wants to withdraw the money in their bank account, option 3 is selected. The user has to verify their account number and password. All the procedures are the same as the lodgement. The user can enter the withdrawn amount. When the user withdrawn amount is greater than the balance. The insufficient balance will be shown on the screen.
+
+![Withdraw](readme-assets/withdraw-successful.png)
+
+![Insufficient balance](readme-assets/insufficient-balance.png)
+
+
 
 
 
