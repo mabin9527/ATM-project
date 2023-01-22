@@ -69,7 +69,7 @@ When running the program, a welcome page and start menu can be displayed on the 
 ----------------------------------------
 #### Open account
 
-When the user wants to open a bank account, option 1 is selected. The following information are required:
+When the user wants to open a bank account, option 1 is selected. The following information is required:
 
 - Passport number. The format of the passport number example is listed clearly. The user's passport number will be verified by a regular expression. If the passport number is correct, the process will go next step. Otherwise, it will go back to the start menu.
 
@@ -99,5 +99,16 @@ When the user wants to open a bank account, option 1 is selected. The following 
 
 ![Generate account number](readme-assets/generate-random-account-number.png)
 
-
 ----------------------------------------
+#### Lodgement
+
+When the user wants to lodge the money in their bank account, option 2 is selected. The following information is required:
+
+- Account is required to verify if the user is our bank's customer or not. A try-except statement is used to avoid the user typing characters by accident.
+
+![Invalid account number](readme-assets/invalid-account-number.png)
+
+![Non-exist account number](readme-assets/non-exist-account-number.png)
+
+![Correct account number](readme-assets/correct-account-number.png)
+
