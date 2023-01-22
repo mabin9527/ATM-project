@@ -63,4 +63,15 @@ For a logical statement of the ATM project, a lucidchart has been used to explai
 When running the program, a welcome page and start menu can be displayed on the screen clearly, which is easy to follow for the user to operate the machine. Users' requirements can be fulfilled by selecting the menu options.
   
 
-![Enter or Leave Shop](readme-assets/start-menu.png)
+![Start menu](readme-assets/start-menu.png)
+
+
+----------------------------------------
+#### Open account
+
+When the user wants to open a bank account, option 1 is selected. The following information are required:
+
+- Passport number. The format of the passport number example is listed clearly. The user's passport number will be verified by a regular expression. If the passport number is correct, the process will go next step. Otherwise, it will go back to the start menu.
+![Passport number](readme-assets/passport-number.png)
+
+----------------------------------------
