@@ -72,9 +72,32 @@ When running the program, a welcome page and start menu can be displayed on the 
 When the user wants to open a bank account, option 1 is selected. The following information are required:
 
 - Passport number. The format of the passport number example is listed clearly. The user's passport number will be verified by a regular expression. If the passport number is correct, the process will go next step. Otherwise, it will go back to the start menu.
+
 ![Passport number](readme-assets/passport-number.png)
 
 - Phone number. There is an example for users. A regular expression of phone number is applied to validate the phone number. The process will go further as the validation is passed.
+
 ![Phone number](readme-assets/phone-number.png)
+
+- Full name. If the user's full name is verified. It will come to the next procedure.
+
+![Full name](readme-assets/full-name.png)
+
+- Password. User has to set their 4 digital passwords. Verification is operated by a regular expression
+
+![Password](readme-assets/set-password.png)
+
+- Confirm password. A confirmation of the password is required. The user has three times to confirm the password. If three times ran out, it will go back to start menu.
+
+![Confirm password](readme-assets/confirm-password.png)
+
+- Deposit. A deposit for the user's account is required. It allows the user to enter the amount of the deposit.
+
+![Deposit](readme-assets/deposit.png)
+
+- Generate a random account number. If the previous steps went smoothly, the machine generates a random account number for the user.
+
+![Generate account number](readme-assets/generate-random-account-number.png)
+
 
 ----------------------------------------
