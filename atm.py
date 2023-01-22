@@ -35,7 +35,7 @@ class ATM:
         print('--------Please enter your passport number--------')
         print('Passport number should like the following example')
         print('Example: 141234567/ 151234567, G12345678, P1234567')
-        passport_number = input('Please enter your passport number here: ')
+        passport_number = input('Please enter your passport number here:\n')
         regex = re.match('(^(14|15)\d{7})|(^[DEGPS]\d{7,8}$)', passport_number)
         if not regex:
             print('Please enter the right passport number')
@@ -43,30 +43,30 @@ class ATM:
         print()
         print('--------Please enter your phone number--------')
         print('-------Phone number should start with 08------')
-        phone_number = input('Please enter your phone number: ')
+        phone_number = input('Please enter your phone number:\n')
         regex = re.match('08[35679][0-9]{7}$', phone_number)
         if not regex:
             print('Please enter the right phone number')
             return False
         print()
         print('--------Please enter your full name--------')
-        username = input('Pleaase enter your full name: ')
+        username = input('Pleaase enter your full name:\n')
         regex = re.match('^[a-zA-Z]+ [a-zA-Z]+$', username)
         if not regex:
             print('Please enter your name correctly')
             return False
         print()
         print('--------Please enter your password--------')
-        password = input('Please enter your password(4 digits): ')
+        password = input('Please enter your password(4 digits):\n')
         regex = re.match('\d{4}', password)
         if not regex:
             print('Incorrect! your password should contains 4 digits')
             return False
-        confirm = input('Please confirm your password: ')
+        confirm = input('Please confirm your password:\n')
         if password != confirm:
             print('The confirmation password is not identical!')
             for i in range(2, 0, -1):
-                confirm = input(f'Incorrect! {i} times left: ')
+                confirm = input(f'Incorrect! {i} times left:\n')
                 if password == confirm:
                     break
             else:
@@ -74,7 +74,7 @@ class ATM:
                 return False
         print()
         print('--------Please enter your predeposit--------')
-        balance = input('Please enter your amount: ')
+        balance = input('Please enter your amount:\n')
         regex = re.match('[1-9][0-9]+$', balance)
         if not regex:
             print('Please enter correct amount of predeposit')
@@ -98,7 +98,7 @@ class ATM:
 
     def lodgement(self):
         """
-        Account number, password, card lock have to be checked 
+        Account number, password, card lock have to be checked
         before lodgement
         """
         account_number = self.__public_check_account_number()
@@ -117,7 +117,7 @@ class ATM:
             return
         if not self.__public_verify_password(account_number):
             return
-        deposit = int(input('Please enter your deposit: '))
+        deposit = int(input('Please enter your deposit:\n'))
         if deposit % 5 != 0:
             print('Please enter correct deposit')
         else:
@@ -147,7 +147,7 @@ class ATM:
             return
         if not self.__public_verify_password(account_number):
             return
-        money = int(input('Please enter the amount you want to withdraw: '))
+        money = int(input('Please enter the amount you want to withdraw:\n'))
         if money % 5 != 0:
             print('Please enter the correct amount!')
         elif money > int(balance):
@@ -186,7 +186,7 @@ class ATM:
         saved account number.
         """
         try:
-            account_number = int(input('Please enter your account number: '))
+            account_number = int(input('Please enter your account number:\n'))
             saved_account_number = spreadsheets.col_values(4)
             saved_account_number.pop(0)
             saved_account_number = [int(x) for x in saved_account_number]
@@ -207,10 +207,10 @@ class ATM:
         account_password = spreadsheets.cell(
             account_number_row, account_number_col+1
         ).value
-        password = input('Please enter your password: ')
+        password = input('Please enter your password:\n')
         if account_password != password:
             for i in range(2, 0, -1):
-                password = input(f'Incorrect! {i} times left: ')
+                password = input(f"Incorrect! {i} times left:\n")
                 if password == account_password:
                     break
             else:

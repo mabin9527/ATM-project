@@ -26,7 +26,7 @@ def main():
     while True:
         admin.func()
         time.sleep(1)
-        menu = input('Please select your options: ')
+        menu = input('Please select your options:\n')
         atm = ATM()
         if menu == '1':
             atm.create_account()
