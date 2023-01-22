@@ -74,4 +74,7 @@ When the user wants to open a bank account, option 1 is selected. The following 
 - Passport number. The format of the passport number example is listed clearly. The user's passport number will be verified by a regular expression. If the passport number is correct, the process will go next step. Otherwise, it will go back to the start menu.
 ![Passport number](readme-assets/passport-number.png)
 
+- Phone number. There is an example for users. A regular expression of phone number is applied to validate the phone number. The process will go further as the validation is passed.
+![Phone number](readme-assets/phone-number.png)
+
 ----------------------------------------
