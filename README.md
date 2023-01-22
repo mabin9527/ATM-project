@@ -112,3 +112,14 @@ When the user wants to lodge the money in their bank account, option 2 is select
 
 ![Correct account number](readme-assets/correct-account-number.png)
 
+- Password is tested when the user's account number is correct. Three are three times to try to input the password. If three times ran out, the account will be blocked and the user can't do anything unless contacting the bank.
+
+![Confirm password](readme-assets/confirm-password.png)
+
+![Blocked account](readme-assets/blocked-account.png)
+
+![Correct password](readme-assets/correct-password.png)
+
+
+
+
