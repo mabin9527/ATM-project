@@ -13,7 +13,10 @@
 - [User Experience](#user-experience)
 - [Lucidchart](#lucidchart)
 - [Features](#features)
-    - [Future Features](#future-features)
+    - [Open Account](#open-account)
+    - [Lodgement](#lodgement)
+    - [Withdraw](#withdraw)
+    - [Balance](#balance)
 - [Testing](#testing-and-issues-encountered)
 - [Technologies](#technologies-used)
 - [Deployment](#deployment-to-heroku)
@@ -143,6 +146,18 @@ When the user wants to check the balance of their account, option 4 is selected.
 
 ![Balance](readme-assets/balance.png)
 
+
+--------------------------------------
+## Testing 
+--------------------------------------
+
+The Python code of the ATM project has been tested by doing the following:
+
+- Copy and paste the code to the PEP8 linter provided by Code Institute and confirmed there are no errors.
+- Tested in my local terminal and the Code Institute Heroku terminal
+- Type in various possible inputs to the terminal and there are no issues.
+
+![PEP8](readme-assets/pep8-test.png)
 
 
 
