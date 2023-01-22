@@ -21,7 +21,10 @@ spreadsheets = SHEET.worksheet('client_info')
 
 class ATM:
     """
-    pass
+    ATM class allow user to create bank account, lodge and withdraw money
+    and check account balance. All the relevant data are saved in google
+    sheets, which allows developer to read and write data from google 
+    sheets.
     """
     def create_account(self):
         """

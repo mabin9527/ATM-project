@@ -1,5 +1,5 @@
-import gspread
 import time
+import gspread
 from google.oauth2.service_account import Credentials
 from admin import Admin
 from atm import ATM
@@ -17,6 +17,9 @@ SHEET = GSPREAD_CLIENT.open('ATM_project')
 
 
 def main():
+    """
+    Users can select their options from this function
+    """
     admin = Admin()
     admin.welcome()
     time.sleep(1)
