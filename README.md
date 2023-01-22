@@ -52,3 +52,15 @@ As a returning user:
 For a logical statement of the ATM project, a lucidchart has been used to explain the working process of the machine clearly. Besides, it assists me with logical guidance to complete the project.
 
 ![Flowchart](readme-assets/atm-flowchart.png)
+
+
+----------------------------------------
+## Features
+----------------------------------------
+
+### Start menu
+
+When running the program, a welcome page and start menu can be displayed on the screen clearly, which is easy to follow for the user to operate the machine. Users' requirements can be fulfilled by selecting the menu options.
+  
+
+![Enter or Leave Shop](readme-assets/start-menu.png)
