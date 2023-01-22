@@ -120,6 +120,11 @@ When the user wants to lodge the money in their bank account, option 2 is select
 
 ![Correct password](readme-assets/correct-password.png)
 
+- Lodgement will be successful when the account number and password are matched.
+
+![Lodgement](readme-assets/lodgement-successful.png)
+
+
 
 
 

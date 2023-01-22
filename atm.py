@@ -121,7 +121,7 @@ class ATM:
         if deposit % 5 != 0:
             print('Please enter correct deposit')
         else:
-            print('Your lodgement is successfully!')
+            print('Your lodgement is successful!')
             spreadsheets.update_cell(
                 account_number_row, account_number_col+2,
                 deposit + int(balance)
@@ -153,7 +153,7 @@ class ATM:
         elif money > int(balance):
             print('Your balance is insufficient!')
         else:
-            print('Your withdrawal is successfully!')
+            print('Your withdrawal is successful!')
             spreadsheets.update_cell(
                 account_number_row, account_number_col+2, int(balance)-money)
 
