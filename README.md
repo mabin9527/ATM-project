@@ -223,8 +223,16 @@ The website was deployed by following the steps below:
 9. Click deploy branch. 
 
 
+--------------------------------------
+## Credits 
+--------------------------------------
+
+- Love Sandwiches from Code Institute - for general guidance and how to set up my API and import gspread to manipulate data from google sheets.
+- [CSDN](https://blog.csdn.net/qq_15437625/article/details/98601019) - for the regular expression of a passport number.
 
 
+--------------------------------------
+## Acknowledgments
+--------------------------------------
 
-
-
+Many thanks to the student care from the Code Institute for assisting me to solve the bugs and give me suggestions to optimize my code. At the same, I want to thanks my family to support me in using my spare time to learn coding.
