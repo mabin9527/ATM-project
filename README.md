@@ -19,6 +19,7 @@
     - [Balance](#balance)
 - [Testing](#testing-and-issues-encountered)
 - [Technologies](#technologies-used)
+- [Python Libraries/Modules](#python-libraries/modules)
 - [Deployment](#deployment-to-heroku)
 - [Credits](#credits)
 
@@ -171,6 +172,30 @@ The Python code of the ATM project has been tested by doing the following:
 ### Validator Testing
 
 - No errors were found from PEP8online.com
+
+
+----------------------------------------
+## Technologies Used 
+----------------------------------------
+
+### Languages
+- Python
+
+### Tools
+- Git
+- GitHub
+- Gitpod
+- Heroku
+
+----------------------------------------
+
+## Python Libraries/Modules
+----------------------------------------
+
+- Time - to add the .sleep() function and delay my code in the terminal
+- Re - to use a regular expression to judge if the user's input is correct.
+- Random - to generate a random account number for the user.
+- Gspread - as API for my Google Sheet
 
 
 
