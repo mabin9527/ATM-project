@@ -50,8 +50,7 @@ As a returning user:
 
 
 ----------------------------------------
-
-### Lucidchart
+## Lucidchart
 ----------------------------------------
 
 For a logical statement of the ATM project, a lucidchart has been used to explain the working process of the machine clearly. Besides, it assists me with logical guidance to complete the project.
@@ -104,6 +103,10 @@ When the user wants to open a bank account, option 1 is selected. The following 
 
 ![Generate account number](readme-assets/generate-random-account-number.png)
 
+- All the information from the user will be automatically saved to google sheets. 
+
+![Google sheets](readme-assets/google-sheets.png)
+
 
 ----------------------------------------
 #### Lodgement
@@ -134,7 +137,7 @@ When the user wants to lodge the money in their bank account, option 2 is select
 ----------------------------------------
 #### Withdraw
 
-When the user wants to withdraw the money in their bank account, option 3 is selected. The user has to verify their account number and password. All the procedures are the same as the lodgement. The user can enter the withdrawn amount. When the user withdrawn amount is greater than the balance. The insufficient balance will be shown on the screen.
+When the user wants to withdraw the money in their bank account, option 3 is selected. The user has to verify their account number and password. All the procedures are the same as the lodgement. The user can enter the withdrawn amount. When the user's withdrawn amount is greater than the balance. The insufficient balance will be shown on the screen.
 
 ![Withdraw](readme-assets/withdraw-successful.png)
 
@@ -189,7 +192,6 @@ The Python code of the ATM project has been tested by doing the following:
 - Heroku
 
 ----------------------------------------
-
 ## Python Libraries/Modules
 ----------------------------------------
 
@@ -200,7 +202,7 @@ The Python code of the ATM project has been tested by doing the following:
 
 
 --------------------------------------
-### Deployment to Heroku
+## Deployment to Heroku
 --------------------------------------
 
 The website was deployed by following the steps below: 
