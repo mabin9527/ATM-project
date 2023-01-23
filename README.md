@@ -198,6 +198,31 @@ The Python code of the ATM project has been tested by doing the following:
 - Gspread - as API for my Google Sheet
 
 
+--------------------------------------
+### Deployment to Heroku
+--------------------------------------
+
+The website was deployed by following the steps below: 
+
+1. Log in [Heroku](https://id.heroku.com/login). 
+
+2. Click 'New' and select 'Create new app'
+
+3. Choose a name for the app, region and click on 'Create app'
+
+4. Only 'Deploy' and 'Settings' are relevant from the menu section. Starting with the 'Settings' first.
+
+5. Now Buildpacks need to be added. They install future dependencies that are needed outside of the requirements file. The first is Python and the second is node.js. Python needs to be selected first and then node.js. Save this selection.
+
+6. Now the 'Deploy' section needs to be selected from the menu and connect to Git Hub.
+
+7. Enter the name of the repository we want to connect it with and click 'Connect'
+
+8. The choice appears now to either deploy using automatic deploys or manual deployment, which deploys the current state of the branch.
+
+9. Click deploy branch. 
+
+
 
 
 
