@@ -22,6 +22,7 @@
 - [Python Libraries/Modules](#python-libraries/modules)
 - [Deployment](#deployment-to-heroku)
 - [Credits](#credits)
+- [Acknowledgments](#acknowledgments)
 
 ----------------------------------------
 
