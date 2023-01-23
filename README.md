@@ -159,10 +159,18 @@ The Python code of the ATM project has been tested by doing the following:
 
 ![PEP8](readme-assets/pep8-test.png)
 
-### Fixed bugs
+### Fixed Bugs
 
 - When I set up the verify account number function, an undefined variable called account_number is merged due to the account_number variable has not passed to verify the account number function. Then the issue was fixed.
 - When I want to verify the password input by the user, it always showed that the password typed by the user is not matched. However, it is supposed to be matched. Then I found that the returned verified password is an integer. But the extracted password from google sheets is strings. Therefore, it was not matched. Then I converted the integer to strings. There is no issue found after fixing that.
+
+### Unfixed Bugs
+
+- No bugs remaining
+
+### Validator Testing
+
+- No errors were found from PEP8online.com
 
 
 
